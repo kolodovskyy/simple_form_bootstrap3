@@ -4,11 +4,11 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'simple_form_boostrap3'
+    gem 'simple_form_bootstrap3'
 
 or this line:
 
-    gem 'simple_form_boostrap3', git: 'https://github.com/kolodovskyy/simple_form_boostrap3.git'
+    gem 'simple_form_bootstrap3', git: 'https://github.com/kolodovskyy/simple_form_bootstrap3.git'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install simple_form_boostrap3
+    $ gem install simple_form_bootstrap3
 
 ## Maintainers and Authors
 
