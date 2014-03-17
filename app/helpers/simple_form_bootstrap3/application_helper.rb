@@ -3,6 +3,7 @@ module SimpleFormBootstrap3
     def horizontal_form_for(object, *args, &block)
       options = args.extract_options!
       options[:wrapper] ||= :horizontal
+      options[:builder] ||= SimpleForm::HorizontalFormBuilder
       options[:html] ||= {}
       options[:html][:role] = 'form'
       options[:html][:class] = [ options[:html][:class], 'form-horizontal' ].compact.join(' ')
@@ -13,6 +14,7 @@ module SimpleFormBootstrap3
     def default_form_for(object, *args, &block)
       options = args.extract_options!
       options[:wrapper] ||= :default
+      options[:builder] ||= SimpleForm::DefaultFormBuilder
       options[:html] ||= {}
       options[:html][:role] = 'form'
 
@@ -22,7 +24,7 @@ module SimpleFormBootstrap3
     def inline_form_for(object, *args, &block)
       options = args.extract_options!
       options[:wrapper] ||= :inline
-      options[:builder] ||= SimpleForm::PlaceholderFormBuilder
+      options[:builder] ||= SimpleForm::InlineFormBuilder
       options[:html] ||= {}
       options[:html][:role] = 'form'
       options[:html][:class] = [ options[:html][:class], 'form-inline' ].compact.join(' ')
