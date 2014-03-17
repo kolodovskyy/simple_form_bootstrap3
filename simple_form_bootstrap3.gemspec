@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Rails form generator with simple_form and bootstrap3."
   s.license     = "MIT"
 
-  s.files       = Dir[ "{app,config,lib}/**/*", "LICENSE.txt", "Rakefile", "README.md" ]
+  s.files       = Dir[ "{config,lib}/**/*", "LICENSE.txt", "Rakefile", "README.md" ]
 
   s.add_dependency "bootstrap-sass", "~> 3.1.1.0"
   s.add_dependency "simple_form", "~> 3.0.1"
