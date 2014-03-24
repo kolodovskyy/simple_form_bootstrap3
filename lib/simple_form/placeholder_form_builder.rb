@@ -1,5 +1,5 @@
 module SimpleForm
-  class PlaceholderFormBuilder < SimpleForm::FormBuilder
+  class PlaceholderFormBuilder < SimpleForm::DefaultFormBuilder
     def input(attribute_name, options = {}, &block)
       if options[:placeholder].nil?
         options[:placeholder] ||= object.class.respond_to?(:human_attribute_name) ?

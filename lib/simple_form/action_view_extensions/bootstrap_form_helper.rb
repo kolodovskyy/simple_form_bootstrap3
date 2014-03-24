@@ -22,6 +22,16 @@ module SimpleForm
         simple_form_for object, *(args << options), &block
       end
 
+      def compact_form_for(object, *args, &block)
+        options = args.extract_options!
+        options[:wrapper] ||= :default
+        options[:builder] ||= SimpleForm::PlaceholderFormBuilder
+        options[:html] ||= {}
+        options[:html][:role] = 'form'
+
+        simple_form_for object, *(args << options), &block
+      end
+
       def inline_form_for(object, *args, &block)
         options = args.extract_options!
         options[:wrapper] ||= :inline

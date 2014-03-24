@@ -1,13 +1,13 @@
 module SimpleForm
-  class HorizontalFormBuilder < SimpleForm::FormBuilder
+  class HorizontalFormBuilder < SimpleForm::DefaultFormBuilder
     def checkbox(attribute_name, options = {}, &block)
       options[:wrapper] ||= :horizontal_checkbox
-      input attribute_name, options, &block
+      super
     end
 
     def radio(attribute_name, options = {}, &block)
       options[:wrapper] ||= :horizontal_radio
-      input attribute_name, options, &block
+      super
     end
 
     def buttons(options = {}, &block)
