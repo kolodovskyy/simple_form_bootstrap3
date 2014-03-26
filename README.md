@@ -20,8 +20,8 @@ Or install it yourself as:
 
 ## Links
 
-https://github.com/smalot/bootstrap-datepicker
-https://github.com/smalot/bootstrap-datetimepicker
+Thanks for Sebastien MALOT`s [datepicker](https://github.com/smalot/bootstrap-datepicker) and
+[datetimepicker](https://github.com/smalot/bootstrap-datetimepicker)
 
 ## Maintainers and Authors
 
