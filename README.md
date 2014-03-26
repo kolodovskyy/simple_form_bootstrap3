@@ -18,6 +18,11 @@ Or install it yourself as:
 
     $ gem install simple_form_bootstrap3
 
+## Links
+
+https://github.com/smalot/bootstrap-datepicker
+https://github.com/smalot/bootstrap-datetimepicker
+
 ## Maintainers and Authors
 
 Yuriy Kolodovskyy (https://github.com/kolodovskyy)
