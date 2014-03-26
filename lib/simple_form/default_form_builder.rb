@@ -1,7 +1,7 @@
 module SimpleForm
   class DefaultFormBuilder < SimpleForm::FormBuilder
-    map_type :datetime,    to: DateTimePickerInput
-    map_type :time, :date, to: DatePickerInput
+    map_type :datetime, to: SimpleForm::Inputs::DateTimePickerInput
+    map_type :date,     to: SimpleForm::Inputs::DatePickerInput
 
     def checkbox(attribute_name, options = {}, &block)
       options[:wrapper] ||= :checkbox
