@@ -12,10 +12,11 @@ module SimpleForm
 
       def input_html_options
         options[:value] = Time.zone.parse(options[:value]) if options[:value].is_a? String
+        value = options[:value].presence || object.send(attribute_name)
 
         { class: 'form-control',
           readonly: true,
-          value: (options[:value].presence || object.send(attribute_name)).strftime("%Y-%m-%d %H:%M") }
+          value: value ? value.strftime("%Y-%m-%d %H:%M") : '' }
       end
 
       def span_calendar
