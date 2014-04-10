@@ -11,11 +11,18 @@ module SimpleForm
       private
 
       def input_html_options
-        options[:value] = Time.zone.parse(options[:value]) if options[:value].is_a? String
+        if options.key? :value
+          value = options[:value]
+        elsif object.respond_to?(attribute_name)
+          value = object.send(attribute_name)
+        else
+          value = ''
+        end
 
-        { class: 'form-control',
-          readonly: true,
-          value: (options[:value].presence || object.send(attribute_name)).strftime("%Y-%m-%d") }
+        value = Time.zone.parse(value) if value.is_a?(String)
+        value = value.strftime("%Y-%m-%d") if value.respond_to?(:strftime)
+
+        { class: 'form-control', readonly: true, value: value.presence || '' }
       end
 
       def span_calendar
