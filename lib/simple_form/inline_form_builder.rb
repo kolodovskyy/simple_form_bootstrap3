@@ -1,13 +1,6 @@
 module SimpleForm
   class InlineFormBuilder < SimpleForm::PlaceholderFormBuilder
-    def checkbox(attribute_name, options = {}, &block)
-      options[:wrapper] ||= :inline_checkbox
-      super
-    end
-
-    def radio(attribute_name, options = {}, &block)
-      options[:wrapper] ||= :inline_radio
-      super
-    end
+    CHECKBOX_WRAPPER = :inline_checkbox
+    RADIO_WRAPPER = :inline_radio
   end
 end

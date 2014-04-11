@@ -1,14 +1,7 @@
 module SimpleForm
   class HorizontalFormBuilder < SimpleForm::DefaultFormBuilder
-    def checkbox(attribute_name, options = {}, &block)
-      options[:wrapper] ||= :horizontal_checkbox
-      super
-    end
-
-    def radio(attribute_name, options = {}, &block)
-      options[:wrapper] ||= :horizontal_radio
-      super
-    end
+    CHECKBOX_WRAPPER = :horizontal_checkbox
+    RADIO_WRAPPER = :horizontal_radio
 
     def buttons(options = {}, &block)
       raise ::ArgumentError unless block_given?
