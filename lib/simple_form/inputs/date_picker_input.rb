@@ -2,10 +2,7 @@ module SimpleForm
   module Inputs
     class DatePickerInput < Base
       def input
-        template.content_tag(:div, class: 'input-group date datepicker') do
-          template.concat span_calendar
-          template.concat @builder.datetime_field(attribute_name, input_html_options)
-        end
+        @builder.datetime_field(attribute_name, input_html_options)
       end
 
       private
@@ -22,17 +19,7 @@ module SimpleForm
         value = Time.zone.parse(value) if value.is_a?(String)
         value = value.strftime("%Y-%m-%d") if value.respond_to?(:strftime)
 
-        { class: 'form-control', readonly: true, value: value.presence || '' }
-      end
-
-      def span_calendar
-        template.content_tag(:span, class: 'input-group-addon') do
-          template.concat icon_calendar
-        end
-      end
-
-      def icon_calendar
-        '<i class="glyphicon glyphicon-calendar"></i>'.html_safe
+        { class: 'form-control text-center date datepicker', value: value.presence || '' }
       end
     end
   end
