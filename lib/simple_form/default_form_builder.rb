@@ -36,5 +36,20 @@ module SimpleForm
         end
       end
     end
+
+    def collection_radio_buttons(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
+      options[:collection_wrapper_tag] ||= :div
+      options[:collection_wrapper_class] ||= 'form-group'
+      options[:item_wrapper_tag] ||= :div
+      options[:item_wrapper_class] ||= 'radio'
+
+      if block_given?
+        super
+      else
+        super do |input|
+          input.label { input.radio_button + input.text }
+        end
+      end
+    end
   end
 end
