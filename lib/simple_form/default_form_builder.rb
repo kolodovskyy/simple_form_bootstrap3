@@ -23,31 +23,39 @@ module SimpleForm
     end
 
     def collection_check_boxes(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      options[:collection_wrapper_tag] ||= :div
-      options[:collection_wrapper_class] ||= 'form-group'
-      options[:item_wrapper_tag] ||= :div
-      options[:item_wrapper_class] ||= 'checkbox'
+      options[:collection_wrapper_tag] = :div unless options.key? :collection_wrapper_tag
+      options[:collection_wrapper_class] = 'form-group' unless options.key? :collection_wrapper_class
+      if options[:inline]
+        options[:item_wrapper_tag] = nil
+      else
+        options[:item_wrapper_tag] = :div unless options.key? :item_wrapper_tag
+        options[:item_wrapper_class] = 'checkbox' unless options.key? :item_wrapper_class
+      end
 
       if block_given?
         super
       else
         super do |input|
-          input.label { input.check_box + input.text }
+          input.label(options[:inline] ? { class: 'checkbox-inline' } : {} ) { input.check_box + input.text }
         end
       end
     end
 
     def collection_radio_buttons(method, collection, value_method, text_method, options = {}, html_options = {}, &block)
-      options[:collection_wrapper_tag] ||= :div
-      options[:collection_wrapper_class] ||= 'form-group'
-      options[:item_wrapper_tag] ||= :div
-      options[:item_wrapper_class] ||= 'radio'
+      options[:collection_wrapper_tag] = :div unless options.key? :collection_wrapper_tag
+      options[:collection_wrapper_class] = 'form-group' unless options.key? :collection_wrapper_class
+      if options[:inline]
+        options[:item_wrapper_tag] = nil
+      else
+        options[:item_wrapper_tag] = :div unless options.key? :item_wrapper_tag
+        options[:item_wrapper_class] = 'radio' unless options.key? :item_wrapper_class
+      end
 
       if block_given?
         super
       else
         super do |input|
-          input.label { input.radio_button + input.text }
+          input.label(options[:inline] ? { class: 'radio-inline' } : {} ) { input.radio_button + input.text }
         end
       end
     end
