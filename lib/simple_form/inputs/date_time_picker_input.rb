@@ -1,7 +1,7 @@
 module SimpleForm
   module Inputs
     class DateTimePickerInput < Base
-      def input
+      def input(wrapper_options = nil)
         @builder.datetime_field(attribute_name, input_html_options)
       end
 

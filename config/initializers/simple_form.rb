@@ -19,8 +19,8 @@
 end
 
 SimpleForm::Components::Labels.class_eval do
-  def label_text_with_spaces
-    " #{label_text_without_spaces} ".html_safe
+  def label_text_with_spaces(wrapper_options = nil)
+    " #{label_text_without_spaces(wrapper_options)} ".html_safe
   end
   alias_method_chain :label_text, :spaces
 end
