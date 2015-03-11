@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["kolodovskyy@ukrindex.com"]
   s.homepage    = "https://github.com/kolodovskyy/simple_form_boostrap3"
   s.summary     = "Rails form generator with simple_form and bootstrap3."
-  s.description = "Rails form generator with simple_form and bootstrap3."
+  s.description = "Simplest way to use simple_form with bootstrap3 and rails."
   s.license     = "MIT"
 
   s.files       = Dir[ "{config,lib,vendor}/**/*", "LICENSE.txt", "Rakefile", "README.md" ]
